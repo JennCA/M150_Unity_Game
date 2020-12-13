@@ -166,6 +166,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 463433841831949331}
+  - component: {fileID: 7138213720203676468}
   m_Layer: 0
   m_Name: View_Root
   m_TagString: Untagged
@@ -190,6 +191,28 @@ Transform:
   m_Father: {fileID: 463433842020510377}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7138213720203676468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463433841831949330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca5d6b3169677af4ab1e26a15c4c0bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerRoot: {fileID: 463433842020510377}
+  viewRoot: {fileID: 463433841831949331}
+  invert: 0
+  canUnlock: 1
+  sensivity: 5
+  rollAngle: 0
+  rollSpeed: 3
+  smoothSteps: 10
+  smoothWeight: 0.4
+  viewLimits: {x: -70, y: 80}
 --- !u!1 &463433842020510376
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,6 +223,8 @@ GameObject:
   m_Component:
   - component: {fileID: 463433842020510377}
   - component: {fileID: 463433842020510374}
+  - component: {fileID: 1492425548}
+  - component: {fileID: 6757572455266830736}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -240,6 +265,35 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &1492425548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463433842020510376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 516feaddcaa6f2b41bd3fe6971412441, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  jumpForce: 10
+--- !u!114 &6757572455266830736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463433842020510376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9199a5707af31e14aad98926426230d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprintSpeed: 8
+  moveSpeed: 4
+  crouchSpeed: 1.5
 --- !u!1 &3187636601002384342
 GameObject:
   m_ObjectHideFlags: 0
