@@ -566,6 +566,7 @@ GameObject:
   - component: {fileID: 117030551}
   - component: {fileID: 117030550}
   - component: {fileID: 117030549}
+  - component: {fileID: 117030553}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -636,6 +637,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &117030553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117030548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11da71dadaf859846947cd6498e5e636, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapons:
+  - {fileID: 1096822129}
+  - {fileID: 1932501665}
+  - {fileID: 1392326404}
+  - {fileID: 2097854535}
+  - {fileID: 1843711379}
+  - {fileID: 485995495}
 --- !u!1 &119602769
 GameObject:
   m_ObjectHideFlags: 0
