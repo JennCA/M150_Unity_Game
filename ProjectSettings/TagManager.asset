@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Axe
+  - Crosshair
+  - View_Root
+  - Person_Camera
   layers:
   - Default
   - TransparentFX
