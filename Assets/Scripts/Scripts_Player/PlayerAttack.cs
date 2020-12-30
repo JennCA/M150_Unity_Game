@@ -5,15 +5,22 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     private WeaponManager weaponManager;
+    private Animator cameraZoomAnimator;
+    private Camera mainCamera;
+    private GameObject crosshair;
 
     public float fireRate = 15f; //how many times are we allowed to shoot
     public float damage = 12f;
     private float timeToFireNext;
 
     private bool isAiming;
+    private bool zoomed;
 
     void Awake() {
         weaponManager = GetComponent<WeaponManager>();
+        cameraZoomAnimator = transform.Find("View_Root").transform.Find("Person_Camera").GetComponent<Animator>();
+        crosshair = GameObject.FindWithTag("Crosshair");
+        mainCamera = Camera.main;
     }
 
     // Start is called before the first frame update
@@ -26,6 +33,7 @@ public class PlayerAttack : MonoBehaviour
     void Update()
     {
         shootWeapon();
+        zoom();
     }
 
     //shooting with LMB
@@ -71,6 +79,39 @@ public class PlayerAttack : MonoBehaviour
                 }
             }
 
+        }
+    }
+
+    //zooming in and out
+    void zoom() {
+        //aiming with camera on weapon (value=AIM)
+        if(weaponManager.getSelectedWeapon().weaponAim == WeaponAim.AIM) {
+            //if we press'n'hold RMB
+            if(Input.GetMouseButtonDown(1)) {
+                cameraZoomAnimator.Play("ZoomIn");
+                crosshair.SetActive(false);
+            }
+
+            //if we release RMB
+            if(Input.GetMouseButtonUp(1)) {
+                cameraZoomAnimator.Play("ZoomOut");
+                crosshair.SetActive(true);
+            }
+        }
+
+        //aiming with camera on weapon (value=SELF_AIM)
+        if(weaponManager.getSelectedWeapon().weaponAim == WeaponAim.SELF_AIM) {
+            //if we press'n'hold RMB
+            if(Input.GetMouseButtonDown(1)) {
+                weaponManager.getSelectedWeapon().aim(true);
+                isAiming = true;
+            }
+
+            //if we release RMB
+            if(Input.GetMouseButtonUp(1)) {
+                weaponManager.getSelectedWeapon().aim(false);
+                isAiming = false;
+            }
         }
     }
 }
