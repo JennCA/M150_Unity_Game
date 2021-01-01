@@ -8,6 +8,7 @@ TagManager:
   - Crosshair
   - View_Root
   - Person_Camera
+  - Arrow
   layers:
   - Default
   - TransparentFX

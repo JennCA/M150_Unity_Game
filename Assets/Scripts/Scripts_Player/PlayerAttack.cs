@@ -9,6 +9,12 @@ public class PlayerAttack : MonoBehaviour
     private Camera mainCamera;
     private GameObject crosshair;
 
+    [SerializeField]
+    private GameObject prefabArrow, prefabSpear;
+
+    [SerializeField]
+    private Transform startPositionArrowAndSpear;
+
     public float fireRate = 15f; //how many times are we allowed to shoot
     public float damage = 12f;
     private float timeToFireNext;
@@ -46,7 +52,7 @@ public class PlayerAttack : MonoBehaviour
                 timeToFireNext = Time.time + 1f / fireRate;
                 weaponManager.getSelectedWeapon().shootAnimation();
 
-                /*shoot function*/
+                shootBullets();
             }
 
         //other weapon than assault riffle
@@ -61,18 +67,20 @@ public class PlayerAttack : MonoBehaviour
                 if(weaponManager.getSelectedWeapon().ammoType == WeaponAmmoType.BULLET) {
                     weaponManager.getSelectedWeapon().shootAnimation();
 
-                    /*shoot function*/
+                    shootBullets();
 
                 //if we have spear or arrow
                 } else {
                     if(isAiming) {
                         weaponManager.getSelectedWeapon().shootAnimation();
 
+                        //throw spear
                         if(weaponManager.getSelectedWeapon().ammoType == WeaponAmmoType.SPEAR) {
-                            /*throw spear function*/
+                            shootArrowOrSpear(false);
 
+                        //shoot arrow
                         } else if(weaponManager.getSelectedWeapon().ammoType == WeaponAmmoType.ARROW) {
-                            /*shoot arrow function*/
+                            shootArrowOrSpear(true);
                         }
                     }
 
@@ -112,6 +120,36 @@ public class PlayerAttack : MonoBehaviour
                 weaponManager.getSelectedWeapon().aim(false);
                 isAiming = false;
             }
+        }
+    }
+
+    //shoot bullets
+    void shootBullets() {
+        RaycastHit hit;
+
+        //raycast from mainCamera position(where we are looking) towards the crosshair
+        if(Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out hit)) {
+            /*deal damage to the enemy*/
+
+            /*
+            you can test this by uncommenting the line below and looking
+            into the console during test-play (point at a rock and shoot at it)
+            */
+
+            // print("WE HIT THIS THING:" + hit.transform.gameObject.name);
+        }
+    }
+
+    //shoot/throw arrow or spear
+    void shootArrowOrSpear(bool shootArrow) {
+        if(shootArrow) {
+            GameObject arrow = Instantiate(prefabArrow); //create copy of prefab
+            arrow.transform.position = startPositionArrowAndSpear.position;
+            arrow.GetComponent<Weapon_Arrow_Spear>().launch(mainCamera);
+        } else {
+            GameObject spear = Instantiate(prefabSpear); //create copy of prefab
+            spear.transform.position = startPositionArrowAndSpear.position;
+            spear.GetComponent<Weapon_Arrow_Spear>().launch(mainCamera);
         }
     }
 }
