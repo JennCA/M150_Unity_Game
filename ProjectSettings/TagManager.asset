@@ -9,6 +9,7 @@ TagManager:
   - View_Root
   - Person_Camera
   - Arrow
+  - Enemy
   layers:
   - Default
   - TransparentFX
