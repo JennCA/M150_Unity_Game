@@ -16,6 +16,8 @@ public class EnemyController : MonoBehaviour
     private EnemyState enemyState;
     private Transform target; //the player
 
+    public GameObject attackPoint;
+
     public float walkSpeed = 0.5f;
     public float runSpeed = 4f;
     public float chaseDistance = 8f; //if player's distance is less than distanceChase than start chasing the player
@@ -164,5 +166,16 @@ public class EnemyController : MonoBehaviour
 
         //set the new position
         navAgent.SetDestination(navHit.position);
+    }
+
+    //copied from WeaponHandler script for the animation
+    void turnOnAttackPoint() {
+        attackPoint.SetActive(true);
+    }
+
+    void turnOffAttackPoint() {
+        if(attackPoint.activeInHierarchy) {
+            attackPoint.SetActive(false);
+        }
     }
 }
