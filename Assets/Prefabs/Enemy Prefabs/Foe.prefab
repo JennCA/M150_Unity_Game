@@ -455,6 +455,7 @@ GameObject:
   - component: {fileID: 1928640715795323659}
   - component: {fileID: 1928640715795323660}
   - component: {fileID: 6285205056809643772}
+  - component: {fileID: 1902933282}
   m_Layer: 0
   m_Name: Foe
   m_TagString: Enemy
@@ -562,6 +563,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5504d9440c9296e4481844175eaa36f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1902933282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1928640715795226022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcae5854e1441ab42aab1baca595de15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkSpeed: 0.5
+  runSpeed: 4
+  chaseDistance: 8
+  attackDistance: 2
+  chaseDistanceAfterAttack: 2
+  patrolRadiusMin: 20
+  patrolRadiusMax: 60
+  patrolForTime: 15
+  waitBeforeAttack: 2
 --- !u!1 &1928640715795226024
 GameObject:
   m_ObjectHideFlags: 0
