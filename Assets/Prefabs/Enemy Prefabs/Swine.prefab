@@ -492,6 +492,8 @@ GameObject:
   - component: {fileID: 6028734425322157421}
   - component: {fileID: 6028734425329434639}
   - component: {fileID: 1283810934674322972}
+  - component: {fileID: 1294223239}
+  - component: {fileID: 1294223240}
   m_Layer: 0
   m_Name: Swine
   m_TagString: Enemy
@@ -569,6 +571,39 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1294223239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6028734425329534651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcae5854e1441ab42aab1baca595de15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkSpeed: 1.5
+  runSpeed: 5
+  chaseDistance: 8
+  attackDistance: 2.2
+  chaseDistanceAfterAttack: 1
+  patrolRadiusMin: 20
+  patrolRadiusMax: 60
+  patrolForTime: 15
+  waitBeforeAttack: 2
+--- !u!114 &1294223240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6028734425329534651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5504d9440c9296e4481844175eaa36f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6028734425329534653
 GameObject:
   m_ObjectHideFlags: 0
