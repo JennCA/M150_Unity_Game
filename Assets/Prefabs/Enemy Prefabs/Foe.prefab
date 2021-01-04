@@ -46,7 +46,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 2048
-  damage: 15
+  damage: 10
   radius: 1
 --- !u!1 &3603812946504017520
 GameObject:

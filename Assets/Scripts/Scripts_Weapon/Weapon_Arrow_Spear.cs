@@ -7,7 +7,7 @@ public class Weapon_Arrow_Spear : MonoBehaviour
     private Rigidbody arrowBody;
 
     public float speed = 30f;
-    public float damage = 15f; //damage dealt to the enemy
+    public float damage = 50f; //damage dealt to the enemy
     public float deactivateTimer = 3f; //deactivate the object after 3 seconds
 
     void Awake() {
@@ -39,7 +39,10 @@ public class Weapon_Arrow_Spear : MonoBehaviour
     }
 
     //deactivate object after it touched/hit the enemy
-    void onTriggerEnter(Collider target) {
-
+    void OnTriggerEnter(Collider target) {
+        if(target.tag == "Enemy") {
+            target.GetComponent<HealthScript>().applyDamage(damage);
+            gameObject.SetActive(false);
+        }
     }
 }
