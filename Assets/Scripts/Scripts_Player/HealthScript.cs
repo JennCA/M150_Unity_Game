@@ -78,7 +78,9 @@ public class HealthScript : MonoBehaviour
                 enemies[i].GetComponent<EnemyController>().enabled = false;
             }
 
-            /*enemyManger = stop spawning enemies*/
+            //stop spawning enemies
+            EnemyManager.instance.stopSpawning();
+
             GetComponent<PlayerMovement>().enabled = false;
             GetComponent<PlayerAttack>().enabled = false;
             GetComponent<WeaponManager>().getSelectedWeapon().gameObject.SetActive(false);
@@ -92,7 +94,9 @@ public class HealthScript : MonoBehaviour
             enemyAnimation.death();
 
             /*enemy audio*/
-            /*enemyManager = spawn more enemies*/
+
+            //spawn more enemies
+            EnemyManager.instance.EnemyDied(false);
         }
 
         if(isFoe) {
@@ -104,7 +108,9 @@ public class HealthScript : MonoBehaviour
             navAgent.enabled = false;
 
             /*enemy audio*/
-            /*enemyManager = spawn more enemies*/
+
+            //spawn more enemies
+            EnemyManager.instance.EnemyDied(true);
         }
 
         if(tag == "Player") {
