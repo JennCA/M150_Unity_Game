@@ -129,14 +129,9 @@ public class PlayerAttack : MonoBehaviour
 
         //raycast from mainCamera position(where we are looking) towards the crosshair
         if(Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out hit)) {
-            /*deal damage to the enemy*/
-
-            /*
-            you can test this by uncommenting the line below and looking
-            into the console during test-play (point at a rock and shoot at it)
-            */
-
-            // print("WE HIT THIS THING:" + hit.transform.gameObject.name);
+            if(hit.transform.tag == "Enemy") {
+                hit.transform.GetComponent<HealthScript>().applyDamage(damage);
+            }
         }
     }
 
