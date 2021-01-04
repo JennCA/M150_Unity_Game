@@ -6,6 +6,7 @@ public class PlayerAbilities : MonoBehaviour
 {
     private PlayerMovement playerMovement;
     private PlayerFootsteps playerFootsteps;
+    private PlayerStats playerStats;
 
     private Transform viewRoot;
     private float heightStanding = 1.8f;
@@ -20,6 +21,10 @@ public class PlayerAbilities : MonoBehaviour
     private float crouchDistanceFootsteps = 0.6f;
 
     private bool isCrouching;
+
+    private float sprintValue = 100f;
+
+    public float sprintThreshold = 10f;
 
     public float sprintSpeed = 10f;
     public float moveSpeed = 5f;
@@ -36,6 +41,7 @@ public class PlayerAbilities : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
         viewRoot = transform.GetChild(0); //get View Root
         playerFootsteps = GetComponentInChildren<PlayerFootsteps>();
+        playerStats = GetComponent<PlayerStats>();
     }
 
     // Update is called once per frame
@@ -47,12 +53,15 @@ public class PlayerAbilities : MonoBehaviour
 
     //sprint function
     void sprint() {
-        if(Input.GetKeyDown(KeyCode.LeftShift) && !isCrouching) {
-            playerMovement.speed = sprintSpeed;
+        //sprint if we have stamina
+        if(sprintValue > 0f) {
+            if(Input.GetKeyDown(KeyCode.LeftShift) && !isCrouching) {
+                playerMovement.speed = sprintSpeed;
 
-            playerFootsteps.distanceFootsteps = sprintDistanceFootsteps;
-            playerFootsteps.minVolume = volumeSprint;
-            playerFootsteps.maxVolume = volumeSprint;
+                playerFootsteps.distanceFootsteps = sprintDistanceFootsteps;
+                playerFootsteps.minVolume = volumeSprint;
+                playerFootsteps.maxVolume = volumeSprint;
+            }
         }
 
         if(Input.GetKeyUp(KeyCode.LeftShift) && !isCrouching) {
@@ -61,6 +70,35 @@ public class PlayerAbilities : MonoBehaviour
             playerFootsteps.distanceFootsteps = walkDistanceFootsteps;
             playerFootsteps.minVolume = volumeWalkMin;
             playerFootsteps.maxVolume = volumeWalkMax;
+        }
+
+        if(Input.GetKey(KeyCode.LeftShift) && !isCrouching) {
+            sprintValue -= sprintThreshold * Time.deltaTime;
+            if(sprintValue <= 0f) {
+                sprintValue = 0f;
+
+                //reset speed and sound
+                playerMovement.speed = moveSpeed;
+                playerFootsteps.distanceFootsteps = walkDistanceFootsteps;
+                playerFootsteps.minVolume = volumeWalkMin;
+                playerFootsteps.maxVolume = volumeWalkMax;
+            }
+
+            //call playerStats
+            playerStats.displayStaminaStats(sprintValue);
+
+        } else {
+            if(sprintValue != 100f) {
+                //generate stamina back
+                sprintValue += (sprintThreshold / 2f) * Time.deltaTime;
+                
+                playerStats.displayStaminaStats(sprintValue);
+
+                //stop from generating more than 100 stamina
+                if(sprintValue > 100f) {
+                    sprintValue = 100f;
+                }
+            }
         }
     }
 

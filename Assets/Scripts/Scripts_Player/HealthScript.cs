@@ -6,8 +6,9 @@ using UnityEngine.AI;
 public class HealthScript : MonoBehaviour
 {
         private EnemyAnimation enemyAnimation;
-        private NavMeshAgent navAgent;
         private EnemyController enemyController;
+        private PlayerStats playerStats;
+        private NavMeshAgent navAgent;
 
         public bool isPlayer, isSwine, isFoe;
         private bool isDead;
@@ -23,8 +24,9 @@ public class HealthScript : MonoBehaviour
             /*enemy audio*/
         }
 
+        //player stats
         if(isPlayer) {
-            /*player stats*/
+            playerStats = GetComponent<PlayerStats>();
         }
     }
 
@@ -50,7 +52,7 @@ public class HealthScript : MonoBehaviour
 
         //show health stats
         if(isPlayer) {
-            /*health stats*/
+            playerStats.displayHealthStats(health);
         }
 
         if(isSwine || isFoe) {
