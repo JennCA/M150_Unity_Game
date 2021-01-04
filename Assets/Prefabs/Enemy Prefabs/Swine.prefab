@@ -46,7 +46,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 2048
-  damage: 2
+  damage: 20
   radius: 1
 --- !u!1 &6028734425329534625
 GameObject:
@@ -71,7 +71,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6028734425329534625}
-  m_LocalRotation: {x: 0.45594856, y: 0.0030336177, z: 0.88998735, w: -0.00491779}
+  m_LocalRotation: {x: 0.45594856, y: 0.003033618, z: 0.88998735, w: -0.0049177906}
   m_LocalPosition: {x: 0.0150133055, y: -0.0000000089901695, z: 0}
   m_LocalScale: {x: 0.99999964, y: 0.99999994, z: 0.9999997}
   m_Children: []
@@ -520,7 +520,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6028734425329534649}
-  m_LocalRotation: {x: 0.0016663598, y: -0.77040577, z: 0.042147458, w: 0.63615716}
+  m_LocalRotation: {x: 0.0016663596, y: -0.77040577, z: 0.042147454, w: 0.63615716}
   m_LocalPosition: {x: -0.13783236, y: -0.19441351, z: -0.075769074}
   m_LocalScale: {x: 1, y: 1, z: 0.9999999}
   m_Children:
@@ -542,6 +542,7 @@ GameObject:
   - component: {fileID: 1283810934674322972}
   - component: {fileID: 1294223239}
   - component: {fileID: 1294223240}
+  - component: {fileID: 6028734426350600511}
   m_Layer: 10
   m_Name: Swine
   m_TagString: Enemy
@@ -634,7 +635,7 @@ MonoBehaviour:
   attackPoint: {fileID: 494735568}
   walkSpeed: 1.5
   runSpeed: 5
-  chaseDistance: 8
+  chaseDistance: 9
   attackDistance: 2.2
   chaseDistanceAfterAttack: 1
   patrolRadiusMin: 20
@@ -653,6 +654,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5504d9440c9296e4481844175eaa36f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6028734426350600511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6028734425329534651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eac46c2272c0c341945488ce441dbf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  isSwine: 1
+  isFoe: 0
+  health: 100
 --- !u!1 &6028734425329534653
 GameObject:
   m_ObjectHideFlags: 0
@@ -706,7 +723,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6028734425329534655}
-  m_LocalRotation: {x: 0.020328162, y: -0.76823395, z: -0.014885126, w: 0.6396733}
+  m_LocalRotation: {x: 0.02032816, y: -0.76823395, z: -0.014885124, w: 0.6396733}
   m_LocalPosition: {x: -0.13783236, y: 0.19441329, z: -0.07576982}
   m_LocalScale: {x: 0.9999999, y: 0.9999999, z: 0.9999999}
   m_Children:

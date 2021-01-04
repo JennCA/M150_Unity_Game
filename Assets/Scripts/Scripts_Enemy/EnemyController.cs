@@ -31,6 +31,10 @@ public class EnemyController : MonoBehaviour
     private float patrolTimer;
     private float attackTimer;
 
+    public EnemyState EnemyState {
+        get; set; //shortcut for get/set-return
+    }
+
 
     void Awake() {
         enemyAnimation = GetComponent<EnemyAnimation>();
