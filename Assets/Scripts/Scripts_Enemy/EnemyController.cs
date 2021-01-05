@@ -15,6 +15,7 @@ public class EnemyController : MonoBehaviour
     private NavMeshAgent navAgent;
     private EnemyState enemyState;
     private Transform target; //the player
+    private EnemySound enemySound;
 
     public GameObject attackPoint;
 
@@ -40,6 +41,7 @@ public class EnemyController : MonoBehaviour
         enemyAnimation = GetComponent<EnemyAnimation>();
         navAgent = GetComponent<NavMeshAgent>();
         target = GameObject.FindWithTag("Player").transform;
+        enemySound = GetComponentInChildren<EnemySound>();
     }
 
     // Start is called before the first frame update
@@ -90,7 +92,8 @@ public class EnemyController : MonoBehaviour
             enemyAnimation.walk(false);
             enemyState = EnemyState.CHASE;
 
-            /*play audio*/
+            //player spotted -> play audio
+            enemySound.playScreamSound();
         }
     }
 
@@ -149,7 +152,8 @@ public class EnemyController : MonoBehaviour
             enemyAnimation.attack();
             attackTimer = 0f;
 
-            /*play audio*/
+            //play attack audio
+            enemySound.playAttackSound();
         }
 
         if(Vector3.Distance(transform.position, target.position) > attackDistance + chaseDistanceAfterAttack) {

@@ -9,6 +9,7 @@ public class HealthScript : MonoBehaviour
         private EnemyController enemyController;
         private PlayerStats playerStats;
         private NavMeshAgent navAgent;
+        private EnemySound enemySound;
 
         public bool isPlayer, isSwine, isFoe;
         private bool isDead;
@@ -20,8 +21,7 @@ public class HealthScript : MonoBehaviour
             enemyAnimation = GetComponent<EnemyAnimation>();
             enemyController = GetComponent<EnemyController>();
             navAgent = GetComponent<NavMeshAgent>();
-
-            /*enemy audio*/
+            enemySound = GetComponentInChildren<EnemySound>();
         }
 
         //player stats
@@ -93,7 +93,8 @@ public class HealthScript : MonoBehaviour
             enemyController.enabled = false;
             enemyAnimation.death();
 
-            /*enemy audio*/
+            //play death audio
+            StartCoroutine(deathSound()); //coroutine can pause execution and then continue where it left off
 
             //spawn more enemies
             EnemyManager.instance.EnemyDied(false);
@@ -107,7 +108,8 @@ public class HealthScript : MonoBehaviour
             enemyAnimation.enabled = false;
             navAgent.enabled = false;
 
-            /*enemy audio*/
+            //play death audio
+            StartCoroutine(deathSound());
 
             //spawn more enemies
             EnemyManager.instance.EnemyDied(true);
@@ -116,7 +118,7 @@ public class HealthScript : MonoBehaviour
         if(tag == "Player") {
             Invoke("restartGame", 3f);
         } else {
-            Invoke("turnOffGameObject", 2f);
+            Invoke("turnOffGameObject", 1.3f);
         }
     }
 
@@ -126,5 +128,10 @@ public class HealthScript : MonoBehaviour
 
     void turnOffGameObject() {
         gameObject.SetActive(false);
+    }
+
+    IEnumerator deathSound() {
+        yield return new WaitForSeconds(0.3f);
+        enemySound.playDeathSound();
     }
 }
