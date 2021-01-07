@@ -270,7 +270,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 992564479}
         m_MethodName: mute
         m_Mode: 1
         m_Arguments:
@@ -531,6 +531,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 992564480}
+  - component: {fileID: 992564479}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -538,6 +539,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &992564479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992564478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3015f3f53bcf1594e9e88e4c17ab290b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &992564480
 Transform:
   m_ObjectHideFlags: 0
@@ -722,6 +735,7 @@ GameObject:
   - component: {fileID: 1602381683}
   - component: {fileID: 1602381682}
   - component: {fileID: 1602381681}
+  - component: {fileID: 1602381684}
   m_Layer: 5
   m_Name: Button_BackToMenu
   m_TagString: Untagged
@@ -792,7 +806,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 992564479}
         m_MethodName: triggerButtonBehavior
         m_Mode: 3
         m_Arguments:
@@ -840,6 +854,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1602381679}
   m_CullTransparentMesh: 0
+--- !u!114 &1602381684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602381679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51b8d01b520d8d24b9b608789e542c99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 2092207465}
 --- !u!1 &2092207463
 GameObject:
   m_ObjectHideFlags: 0

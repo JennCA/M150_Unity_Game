@@ -235,6 +235,7 @@ GameObject:
   m_Component:
   - component: {fileID: 303230227}
   - component: {fileID: 303230228}
+  - component: {fileID: 303230229}
   m_Layer: 0
   m_Name: Background_Sound
   m_TagString: Music
@@ -352,6 +353,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &303230229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303230226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20b784cf07be5d943b6c8125e6f1111b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &444979863
 GameObject:
   m_ObjectHideFlags: 0
@@ -584,6 +597,7 @@ GameObject:
   - component: {fileID: 1104399080}
   - component: {fileID: 1104399079}
   - component: {fileID: 1104399078}
+  - component: {fileID: 1104399081}
   m_Layer: 5
   m_Name: Button_Quit
   m_TagString: Untagged
@@ -654,7 +668,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2054793008}
         m_MethodName: triggerMenuBehavior
         m_Mode: 3
         m_Arguments:
@@ -702,6 +716,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1104399076}
   m_CullTransparentMesh: 0
+--- !u!114 &1104399081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104399076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51b8d01b520d8d24b9b608789e542c99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1188705458}
 --- !u!1 &1188705456
 GameObject:
   m_ObjectHideFlags: 0
@@ -875,6 +902,7 @@ GameObject:
   - component: {fileID: 1338180032}
   - component: {fileID: 1338180031}
   - component: {fileID: 1338180030}
+  - component: {fileID: 1338180033}
   m_Layer: 5
   m_Name: Button_Play
   m_TagString: Untagged
@@ -945,7 +973,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2054793008}
         m_MethodName: triggerMenuBehavior
         m_Mode: 3
         m_Arguments:
@@ -993,6 +1021,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1338180028}
   m_CullTransparentMesh: 0
+--- !u!114 &1338180033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338180028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51b8d01b520d8d24b9b608789e542c99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1734216681}
 --- !u!1 &1347924529
 GameObject:
   m_ObjectHideFlags: 0
@@ -1171,6 +1212,7 @@ GameObject:
   - component: {fileID: 1610984723}
   - component: {fileID: 1610984722}
   - component: {fileID: 1610984721}
+  - component: {fileID: 1610984724}
   m_Layer: 5
   m_Name: Button_Settings
   m_TagString: Untagged
@@ -1241,7 +1283,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2054793008}
         m_MethodName: triggerMenuBehavior
         m_Mode: 3
         m_Arguments:
@@ -1289,6 +1331,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1610984719}
   m_CullTransparentMesh: 0
+--- !u!114 &1610984724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1610984719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51b8d01b520d8d24b9b608789e542c99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 625094141}
 --- !u!1 &1734216679
 GameObject:
   m_ObjectHideFlags: 0
@@ -1376,6 +1431,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2054793009}
+  - component: {fileID: 2054793008}
   m_Layer: 0
   m_Name: Menu_Manager
   m_TagString: Untagged
@@ -1383,6 +1439,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &2054793008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054793007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af591cd3845b7794facadc3369605ead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2054793009
 Transform:
   m_ObjectHideFlags: 0
