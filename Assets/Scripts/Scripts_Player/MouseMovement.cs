@@ -11,22 +11,7 @@ public class MouseMovement : MonoBehaviour
     private bool invert;
 
     [SerializeField]
-    private bool canUnlock = true;
-
-    [SerializeField]
     private float sensivity = 5f;
-
-    [SerializeField]
-    private float rollAngle = 10f;
-
-    [SerializeField]
-    private float rollSpeed = 3f;
-
-    [SerializeField]
-    private int smoothSteps = 10;
-
-    [SerializeField]
-    private float smoothWeight = 0.4f;
 
     private float currentRollAngle;
     private int lastViewFrame;

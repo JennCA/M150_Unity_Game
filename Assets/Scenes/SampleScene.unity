@@ -9102,12 +9102,7 @@ MonoBehaviour:
   playerRoot: {fileID: 117030552}
   viewRoot: {fileID: 1195206754}
   invert: 0
-  canUnlock: 1
-  sensivity: 5
-  rollAngle: 0
-  rollSpeed: 3
-  smoothSteps: 10
-  smoothWeight: 0.4
+  sensivity: 4
   viewLimits: {x: -70, y: 80}
 --- !u!1 &1204650420
 GameObject:
