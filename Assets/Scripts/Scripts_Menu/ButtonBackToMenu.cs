@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SettingsScript : MonoBehaviour
+public class ButtonBackToMenu : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -17,11 +17,6 @@ public class SettingsScript : MonoBehaviour
         
     }
 
-    public void mute() {
-        AudioListener.pause = !AudioListener.pause;
-
-    }
-
     public void triggerButtonBehavior(int i) {
 		switch (i) {
 		default:
@@ -29,6 +24,5 @@ public class SettingsScript : MonoBehaviour
 			SceneManager.LoadScene("MainMenu");	
 			break;
 		}
-
 	}
 }

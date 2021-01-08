@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class DontDestroy : MonoBehaviour
 {
+    private GameObject music;
+
     void Awake() {
-        GameObject[] objs = GameObject.FindGameObjectsWithTag("Music");
-        if(objs.Length > 1) {
-            Destroy(this.gameObject);
+        music = GameObject.FindWithTag("Music");
+        if(tag == "Music") {
+            DontDestroyOnLoad(music);
         }
-        DontDestroyOnLoad(this.gameObject);
     }
 
     // Start is called before the first frame update
