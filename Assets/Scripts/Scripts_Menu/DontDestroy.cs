@@ -11,7 +11,6 @@ public class DontDestroy : MonoBehaviour
         if(tag == "Music") {
             DontDestroyOnLoad(music);
         }
-        
     }
 
     // Start is called before the first frame update
